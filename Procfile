@@ -1,1 +1,1 @@
-web: npm start -- CONFIG_PATH
+web: parse-server CONFIG_PATH
