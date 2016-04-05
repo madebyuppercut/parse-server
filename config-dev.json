@@ -1,0 +1,14 @@
+{
+  "appId": "PVfbZu1TDmnIgwAp5IS8mCESwaTc7u2ivmpjjsQe",
+  "databaseURI": "mongodb://maybe_app:Y3nTPnfGGnlD@ds013599.mlab.com:13599/maybe-dev",
+  "masterKey": "dGKKhzGXyPb8jyajqwGYQwtWIcfKe89QNiunp0hn",
+  "clientKey": "aalfS4qgg2rkNi7NfMQPP9pYBNdbLFL3OiROMDwz",
+  "javascriptKey": "rFkKm5m56QkI0w5rdXOYkQJ717MXVlC1BT6OAKGQ",
+  "restAPIKey": "XOwsIahc9doFDwk9MVS9txuGjg5PhC0uvUfgnCQE",
+  "facebookAppIds": ["1553739704876275"],
+  "fileKey": "8676e280-d2ba-4d7c-8c8e-7ef1ab77b5d6",
+  "serverURL": "https://uppercut-maybe-parse-dev.herokuapp.com/",
+  "appName": "Maybe* Parse Server",
+  "mountPath": "/1",
+  "cloud": "./cloud/main.js"
+}
