@@ -1,1 +1,1 @@
-web: node start -- CONFIG_PATH
+web: npm start -- CONFIG_PATH
