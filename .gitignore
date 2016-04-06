@@ -36,8 +36,8 @@ node_modules
 # visual studio code
 .vscode
 
-# Babel.js
-lib/
+# Babel.js - removed for now for Heroku debug
+#lib/
 
 # cache folder
 .cache
