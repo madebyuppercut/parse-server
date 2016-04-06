@@ -1,1 +1,1 @@
-web: parse-server CONFIG_PATH
+web: parse-server $CONFIG_PATH
