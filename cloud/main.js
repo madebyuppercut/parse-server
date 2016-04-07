@@ -488,7 +488,7 @@ pushToUser = function (userId, data) {
     Parse.Push.send({
         where: pushQuery,
         data: data
-    }, { userMasterKey: true})
+    }, { useMasterKey: true})
     .then(
       function () {
         console.log("Push notification was sent successfully");
