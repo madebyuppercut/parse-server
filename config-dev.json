@@ -18,7 +18,7 @@
   },
   "push": {
     "ios": {
-      "pfx": "../maybe-dev.p12",  
+      "pfx": "/app/maybe-dev.p12",  
       "bundleId": "xyz.maybe",
       "production": false
     }
