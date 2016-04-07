@@ -9,7 +9,7 @@
   "serverURL": "https://uppercut-maybe-parse-dev.herokuapp.com/",
   "port": 80,
   "appName": "Maybe* Parse Server",
-  "mountPath": "/1",
+  "mountPath": "/",
   "cloud": "./cloud/main.js",
   "oauth": {
     "facebook": {
