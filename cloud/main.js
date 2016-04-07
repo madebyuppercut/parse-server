@@ -475,7 +475,7 @@ notifyBasketOwner = function (basketId, data) {
 };
 
 pushToUser = function (userId, data) {
-    consolog.log('pushing');
+    console.log('pushing to user: ' + userId);
     
     var userQuery = new Parse.Query(Parse.User);
     userQuery.equalTo("objectId", userId);
