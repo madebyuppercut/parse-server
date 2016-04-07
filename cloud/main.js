@@ -359,6 +359,11 @@ Parse.Cloud.define("changeVote", function(request, response) {
     });
 });
 
+Parse.Cloud.define("hello", function(request, response) {
+    console.log('test');
+    response.success({status: 'success'});
+});
+
 updateBasketInfo = function (basket, completion) {
     var itemsQuery = new Parse.Query("Item");
     itemsQuery.equalTo("basket", basket);
