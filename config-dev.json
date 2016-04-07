@@ -6,7 +6,7 @@
   "javascriptKey": "rFkKm5m56QkI0w5rdXOYkQJ717MXVlC1BT6OAKGQ",
   "restAPIKey": "XOwsIahc9doFDwk9MVS9txuGjg5PhC0uvUfgnCQE",
   "fileKey": "8676e280-d2ba-4d7c-8c8e-7ef1ab77b5d6",
-  "serverURL": "https://uppercut-maybe-parse-dev.herokuapp.com/",
+  "serverURL": "https://uppercut-maybe-parse-dev.herokuapp.com/1/",
   "port": 80,
   "appName": "Maybe* Parse Server",
   "mountPath": "/1",
