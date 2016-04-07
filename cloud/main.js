@@ -486,16 +486,17 @@ pushToUser = function (userId, data) {
     Parse.Push.send({
         where: pushQuery,
         data: data
-    }, {
-        success: function () {
-            console.log("Push notification was sent successfully");
-        },
-        error: function (error) {
-            console.error("Push notification failed with error:");
-            console.error(error);
-            // throw "Got an error " + error.code + " : " + error.message;
-        }
-    });
+    }, { userMasterKey: true})
+    .then(
+      function () {
+        console.log("Push notification was sent successfully");
+      },
+      function (error) {
+        console.error("Push notification failed with error:");
+        console.error(error);
+        // throw "Got an error " + error.code + " : " + error.message;
+      }
+    );
 };
 
 notifyComentators = function (comment) {
