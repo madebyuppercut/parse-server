@@ -15,5 +15,12 @@
     "facebook": {
       "appIds": "1553739704876275"
     }
+  },
+  "push": {
+    "ios": {
+      "pfx": "maybe-dev.p12", // The filename of private key and certificate in PFX or PKCS12 format from disk  
+      "bundleId": "xyz.maybe", // The bundle identifier associate with your app
+      "production": false // Specifies which environment to connect to: Production (if true) or Sandbox
+    }
   }
 }
