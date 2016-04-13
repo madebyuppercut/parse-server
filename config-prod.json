@@ -1,0 +1,26 @@
+{
+  "appId": "PVfbZu1TDmnIgwAp5IS8mCESwaTc7u2ivmpjjsQe",
+  "databaseURI": "mongodb://maybe_app:h7Ma1VUb47ue@ds025350-a0.mlab.com:25350,ds025350-a1.mlab.com:25350/maybe-prod?replicaSet=rs-ds025350",
+  "masterKey": "LCoioPZ52VPreGOPdVAEIbeRLCwJKbKld1G0ovxD",
+  "clientKey": "0sGaBizki24bdtHTa1rXmzAJf4t5F99UVaslO2Fi",
+  "javascriptKey": "tlOKbFqITyAP5nkoWaoNuVkjrP9yPTzxtFdgFC64",
+  "restAPIKey": "NryQxp3p29Ppt6YAfPTqzFKFKTb7riTDdhkIRs3w",
+  "fileKey": "ac1b0203-2993-45fc-bf52-39f98f085979",
+  "serverURL": "https://parse.maybe.xyz/1/",
+  "port": 80,
+  "appName": "Maybe* Parse Server",
+  "mountPath": "/1",
+  "cloud": "./cloud/main.js",
+  "oauth": {
+    "facebook": {
+      "appIds": "1553739704876275"
+    }
+  },
+  "push": {
+    "ios": {
+      "pfx": "/app/maybe-prod.p12",  
+      "bundleId": "xyz.maybe",
+      "production": false
+    }
+  }
+}
