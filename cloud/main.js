@@ -359,9 +359,36 @@ Parse.Cloud.define("changeVote", function(request, response) {
     });
 });
 
-Parse.Cloud.define("hello", function(request, response) {
-    console.log('test');
-    response.success({status: 'success'});
+Parse.Cloud.define("blockUser", function(request, response) {
+    var blockerId = request.params.blocker;
+    var blockeeId = request.params.blockee;
+
+    new Parse.Query("_User").get(blockerId, {
+        success: function (blocker) {
+            var blockeeQuery = new Parse.Query("_User");
+            blockeeQuery.equalTo("objectId", blockeeId);
+            blockeeQuery.include("blockedBy");
+            blockeeQuery.find({
+                success: function (blockee) {
+                    var blockedBy = blockee.get("blockedBy");
+                    if (!blockedBy.includes(blocker)) {
+                        blockedBy.push(blocker);
+                        blockee.save({useMasterKey: true});
+                    } else {
+                        console.log("User " + blockee.id + " has already been blocked by user " + blocker.id);
+                    }
+                },
+                error: function (error) {
+                    console.error("Failed to query for blockeeId " + request.params.blockee);
+                    response.error(error);
+                }
+            });
+        },
+        error: function (error) {
+            console.error("Failed to query for blockerId " + request.params.blocker);
+            response.error(error);
+        }
+    });
 });
 
 updateBasketInfo = function (basket, completion) {
@@ -475,8 +502,6 @@ notifyBasketOwner = function (basketId, data) {
 };
 
 pushToUser = function (userId, data) {
-    console.log('pushing to user: ' + userId);
-    
     var userQuery = new Parse.Query(Parse.User);
     userQuery.equalTo("objectId", userId);
 
@@ -488,17 +513,16 @@ pushToUser = function (userId, data) {
     Parse.Push.send({
         where: pushQuery,
         data: data
-    }, { useMasterKey: true})
-    .then(
-      function () {
-        console.log("Push notification was sent successfully");
-      },
-      function (error) {
-        console.error("Push notification failed with error:");
-        console.error(error);
-        // throw "Got an error " + error.code + " : " + error.message;
-      }
-    );
+    }, {
+        success: function () {
+            console.log("Push notification was sent successfully");
+        },
+        error: function (error) {
+            console.error("Push notification failed with error:");
+            console.error(error);
+            // throw "Got an error " + error.code + " : " + error.message;
+        }
+    });
 };
 
 notifyComentators = function (comment) {
